@@ -88,8 +88,9 @@ public class IsLegal {
     public static boolean isIndex(File file,String key) throws DocumentException {
         SAXReader saxReader=new SAXReader();
         Document document=saxReader.read(file); // 使用SAXReader读取指定文件，并将解析结果赋值给Document对象
-        Element element= (Element) document.getRootElement().selectSingleNode("index_name");
-        if(element.getText().equals(key)){
+        Element element1= (Element) document.getRootElement().selectSingleNode("index");
+        Element element2= (Element) document.getRootElement().selectSingleNode("index_name");
+        if(element1.getText().equals("1")&&element2.getText().equals(key)){
             return true;
         }
         return false;

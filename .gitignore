@@ -32,3 +32,20 @@ build/
 ### VS Code ###
 .vscode/
 
+out/production/mydbms/sqlparser/DeleteSqlParser.class
+out/production/mydbms/sqlparser/DeleteTableSqlParser.class
+out/production/mydbms/sqlparser/DropDatabaseSqlParser.class
+out/production/mydbms/sqlparser/DropIndexSqlParser.class
+out/production/mydbms/sqlparser/DropTableSqlParser.class
+out/production/mydbms/sqlparser/InsertAllSqlParser.class
+out/production/mydbms/sqlparser/InsertSelectSqlParser.class
+out/production/mydbms/sqlparser/InsertSqlParser.class
+out/production/mydbms/sqlparser/SelectAllSqlParser.class
+out/production/mydbms/sqlparser/SelectAllWhereSqlParser.class
+out/production/mydbms/sqlparser/SelectSqlParser.class
+out/production/mydbms/sqlparser/SelectTableFromDatabaseSqlParser.class
+out/production/mydbms/sqlparser/ShowDatabaseSqlParser.class
+out/production/mydbms/sqlparser/ShowTablesSqlParser.class
+out/production/mydbms/sqlparser/SqlSegment.class
+out/production/mydbms/sqlparser/UpdateSqlParser.class
+out/production/mydbms/sqlparser/UseDatabaseSqlParser.class
