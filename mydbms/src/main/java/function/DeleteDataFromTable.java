@@ -62,15 +62,16 @@ public class DeleteDataFromTable {
         SAXReader reader = new SAXReader();
         Document document = reader.read(file);
         Element root = document.getRootElement();
-        boolean find=false;
 
         //设置一个节点用来遍历
         Element element;
-        List<Node> nodes = root.selectNodes(tbName);
-        boolean isFull=nodes.size()==10;
-        for (Node node : nodes) {
+        List<Node> nodes = root.selectNodes(tbName);//获取一个表的所有节点
+        boolean find=false;
+        boolean isFull=nodes.size()==10;//如果节点数大于10则表满了
+        int unfindNum=0;//记录未找到的记录数
+        for (Node node : nodes) {//循环遍历一张表中的节点
             Element currentNode=(Element)node;
-            List<Attribute> lists=currentNode.attributes();
+            List<Attribute> lists=currentNode.attributes();//遍历节点的属性
             for (Iterator i = lists.iterator(); i.hasNext(); ) {
                 Attribute attribute = (Attribute) i.next();
                 if (attribute.getName().equals(key_value[0]) && attribute.getText().equals(key_value[1])) {
@@ -95,10 +96,18 @@ public class DeleteDataFromTable {
                     CreateTable.writeIO(file1, document1);
                 }
                 System.out.println("删除记录成功");
-                return true;
+            }
+            else{
+                unfindNum++;
             }
         }
-        return false;
+        if(unfindNum==nodes.size()){//TODO:异常处理
+            System.out.println("没有找到要删除的记录");
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 }
 

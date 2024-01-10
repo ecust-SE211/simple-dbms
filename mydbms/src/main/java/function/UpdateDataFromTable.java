@@ -56,7 +56,7 @@ public class UpdateDataFromTable {
         SAXReader reader = new SAXReader();
         Document document = reader.read(file);
         Element root = document.getRootElement();
-
+        int unFindNum = 0;//未找到记录的次数
         List<Node> nodes = root.selectNodes(tbName);
         for (Node node : nodes) {
             Element currentNode = (Element) node;
@@ -81,10 +81,15 @@ public class UpdateDataFromTable {
                 //写入IO
                 CreateTable.writeIO(file,document);
                 System.out.println("更新成功");
-                return true;
+                unFindNum++;
             }
         }
-        return false;
+        if(unFindNum==nodes.size()){
+            return false;
+        }
+        else{
+            return true;
+        }
 
     }
 }

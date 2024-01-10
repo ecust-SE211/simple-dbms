@@ -10,7 +10,7 @@ import java.io.*;
 import java.util.List;
 
 public class CreateTable{
-    static public int entry_num=10;
+    static public int entry_num=100;
     //create table 表名(列名称1 数据类型1，列名称2 数据类型2)
     public static void createTb(String dbName, String tbName, List<String> tmp) throws IOException {
 

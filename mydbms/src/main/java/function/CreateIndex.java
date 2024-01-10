@@ -196,9 +196,7 @@ public class CreateIndex {
                 Attribute attribute = (Attribute) j.next();
                 List<String> tmp=new ArrayList<String>();
                 tmp.add(attribute.getName());//键 0
-                System.out.println(attribute.getName());
                 tmp.add(attribute.getText());//值 1
-                System.out.println(attribute.getText());
                 list.add(tmp);
             }
             //构建该表对应的B+树
